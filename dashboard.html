@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Statistiken · GDG on Campus UDE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <header class="top admin-top">
+    <a class="brand" href="./">
+      <svg class="brand-mark" viewBox="0 0 64 40" aria-hidden="true">
+        <path d="M22 6 6 20" stroke="#EA4335"/><path d="m6 20 16 14" stroke="#4285F4"/>
+        <path d="m42 6 16 14" stroke="#34A853"/><path d="M58 20 42 34" stroke="#FBBC04"/>
+      </svg>
+      <span><strong>GDG on Campus</strong><span>Landingpage-Statistiken</span></span>
+    </a>
+    <nav class="admin-nav" aria-label="Admin">
+      <a href="./">Landingpage</a>
+      <a href="qr.html">QR-Codes</a>
+      <a href="dashboard.html" aria-current="page">Statistiken</a>
+    </nav>
+  </header>
+
+  <main class="admin-wrap">
+    <div class="dash-head">
+      <div>
+        <h1>Statistiken</h1>
+        <p class="muted" id="updated">Lädt …</p>
+      </div>
+      <div class="range" role="group" aria-label="Zeitraum">
+        <button type="button" data-days="7">7 Tage</button>
+        <button type="button" data-days="30" aria-pressed="true">30 Tage</button>
+        <button type="button" data-days="90">90 Tage</button>
+      </div>
+    </div>
+
+    <section class="kpis" aria-label="Kennzahlen">
+      <div class="kpi"><span class="kpi-label">Aufrufe</span><strong class="kpi-value" id="k-views">–</strong><span class="kpi-sub" id="k-views-sub"></span></div>
+      <div class="kpi"><span class="kpi-label">Besucher</span><strong class="kpi-value" id="k-visitors">–</strong><span class="kpi-sub">einzelne Browser-Tabs</span></div>
+      <div class="kpi"><span class="kpi-label">Anmelde-Klicks</span><strong class="kpi-value" id="k-register">–</strong><span class="kpi-sub">Weiterleitung zu gdg.community.dev</span></div>
+      <div class="kpi"><span class="kpi-label">Conversion</span><strong class="kpi-value" id="k-conv">–</strong><span class="kpi-sub">Besucher, die auf „Anmelden“ klicken</span></div>
+    </section>
+
+    <section class="panel" aria-labelledby="chart-title">
+      <div class="panel-head">
+        <h2 id="chart-title">Verlauf pro Tag</h2>
+        <ul class="legend" role="list">
+          <li><span class="sw sw-views"></span>Aufrufe</li>
+          <li><span class="sw sw-register"></span>Anmelde-Klicks</li>
+        </ul>
+      </div>
+      <div class="chart" id="chart"></div>
+      <div class="tooltip" id="tooltip" hidden></div>
+    </section>
+
+    <section class="panel" aria-labelledby="src-title">
+      <div class="panel-head">
+        <h2 id="src-title">Nach Quelle</h2>
+        <a class="small" href="qr.html">Neuen QR-Code erstellen →</a>
+      </div>
+      <p class="panel-note">Jeder QR-Code mit „Wo hängt der Code?“ bekommt hier eine eigene Zeile. <code>direct</code> = ohne Quelle geöffnet, <code>linktree</code> = über <code>?src=linktree</code>.</p>
+      <div class="table-wrap"><table class="data">
+        <thead><tr><th scope="col">Quelle</th><th scope="col" class="num">Aufrufe</th><th scope="col" class="num">Besucher</th><th scope="col" class="num">Anmelde-Klicks</th><th scope="col" class="num">Conversion</th><th scope="col"><span class="sr-only">QR-Code</span></th></tr></thead>
+        <tbody id="t-source"></tbody>
+      </table></div>
+    </section>
+
+    <div class="two-col">
+      <section class="panel" aria-labelledby="ev-title">
+        <h2 id="ev-title">Nach Event</h2>
+        <div class="table-wrap"><table class="data">
+          <thead><tr><th scope="col">Event</th><th scope="col" class="num">Aufrufe</th><th scope="col" class="num">Anmelde-Klicks</th></tr></thead>
+          <tbody id="t-event"></tbody>
+        </table></div>
+      </section>
+      <section class="panel" aria-labelledby="more-title">
+        <h2 id="more-title">„Mehr von uns“</h2>
+        <div class="table-wrap"><table class="data">
+          <thead><tr><th scope="col">Ziel</th><th scope="col" class="num">Klicks</th></tr></thead>
+          <tbody id="t-links"></tbody>
+        </table></div>
+      </section>
+    </div>
+
+    <p class="panel-note">Gezählt wird ohne Cookies und ohne persönliche Daten. Ein Besucher = ein Browser-Tab. Ob jemand die Anmeldung auf gdg.community.dev wirklich abschließt, sieht man dort unter „Attendees“.</p>
+  </main>
+
+  <script src="dashboard.js" type="module"></script>
+</body>
+</html>

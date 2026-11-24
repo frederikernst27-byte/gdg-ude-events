@@ -5,6 +5,7 @@ Keine zweite Community-Seite, sondern nur der kürzeste Weg vom Plakat zur Anmel
 
 **Live:** https://frederikernst27-byte.github.io/gdg-ude-events/
 **QR-Codes:** https://frederikernst27-byte.github.io/gdg-ude-events/qr.html
+**Statistiken:** https://frederikernst27-byte.github.io/gdg-ude-events/dashboard.html
 
 ## So funktioniert's
 
@@ -37,9 +38,24 @@ In [`events.config.js`](events.config.js) unter `events`, Schlüssel = Event-ID 
 
 Ohne Eintrag nimmt die Seite einfach Titel und Kurzbeschreibung des Events.
 
-## Tracking (für Dashboard / Workflow-App)
+## Statistiken & Tracking
 
-Ist in `events.config.js` ein `trackingEndpoint` gesetzt, schickt die Seite jedes Ereignis als JSON per `POST`
+**Dashboard** (`dashboard.html`): Aufrufe, Besucher, Anmelde-Klicks und Conversion für 7 / 30 / 90 Tage,
+Verlauf pro Tag und Tabellen nach Quelle (QR-Code / Plakat), Event und „Mehr von uns“-Links.
+Aus jeder Quellen-Zeile kommt man mit einem Klick zum passenden QR-Code. Umgekehrt zeigt das QR-Tool
+unter jedem Code dessen Zahlen der letzten 30 Tage.
+
+**Backend:** Supabase, Projekt `hhkddsjttsxbqqsfmcci`, eigenes Schema `gdg_events` (keine Verbindung zu anderen Tabellen).
+
+| Teil | Datei | Aufgabe |
+| --- | --- | --- |
+| Tabelle `gdg_events.track` + `gdg_track()` / `gdg_stats()` | `supabase/migrations/…_gdg_tracking.sql` | Rohdaten + Auswertung (nicht direkt über die API erreichbar) |
+| Edge Function `gdg-track` | `supabase/functions/gdg-track` | nimmt Ereignisse an, prüft sie, nur von unseren Origins |
+| Edge Function `gdg-stats` | `supabase/functions/gdg-stats` | liefert nur Summen, keine Einzeldaten |
+
+Neu deployen: `supabase functions deploy gdg-track --no-verify-jwt` (bzw. `gdg-stats`).
+
+Die Landingpage schickt jedes Ereignis als JSON per `POST` an `trackingEndpoint`
 (`navigator.sendBeacon`, Content-Type `text/plain`, also ohne CORS-Preflight). Keine Cookies, keine personenbezogenen Daten.
 
 ```json
@@ -63,11 +79,12 @@ Ist in `events.config.js` ein `trackingEndpoint` gesetzt, schickt die Seite jede
 
 `session` ist eine zufällige ID pro Browser-Tab (sessionStorage). Mit `?debug` in der URL werden alle Ereignisse in der Konsole ausgegeben.
 Vergleich mit dem Linktree: Linktree-Link auf `…/?src=linktree` setzen und Plakate mit eigenen `src`-Werten erzeugen.
+Wer die Daten zusätzlich in einer Workflow-App braucht, kann `gdg-track` erweitern (z. B. Webhook nach dem Insert).
 
 ## Offen
 
-- [ ] Dashboard / Admin-Panel für die Klickzahlen (Robin) – Endpoint in `trackingEndpoint` eintragen
-- [ ] Workflow-App, die die Daten empfängt (Robin)
+- [x] Dashboard für die Klickzahlen
+- [ ] Workflow-App, die die Daten weiterverarbeitet (Robin) – Ansatzpunkt: `supabase/functions/gdg-track`
 - [ ] RSVP direkt auf der Landingpage statt Weiterleitung – nur wenn gdg.community.dev das erlaubt (bei den Betreibern anfragen)
 
 ## Lokal
@@ -77,4 +94,5 @@ npm run update   # Event-Snapshot neu ziehen (Node ≥ 20)
 npm run dev      # http://localhost:5180
 ```
 
-Kein Build-Schritt: reines HTML/CSS/JS. `lib/gdg.js` lädt die Daten, `lib/select.js` wählt das Event, `lib/track.js` trackt.
+Kein Build-Schritt: reines HTML/CSS/JS. `lib/gdg.js` lädt die Daten, `lib/select.js` wählt das Event, `lib/track.js` trackt,
+`dashboard.js` zeigt die Statistiken. Auch lokal (`localhost`) getestete Klicks landen im echten Dashboard – zum Testen `?src=test` nutzen.

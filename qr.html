@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="admin.css" />
   <style>
     .qr-wrap { max-width: 880px; margin: 0 auto; padding: 8px 20px 40px; }
     .qr-wrap h1 { font-size: clamp(1.75rem, 1.4rem + 1.5vw, 2.25rem); font-weight: 600; }
@@ -26,13 +27,15 @@
     .qr-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
     .btn-outline { background: #fff; color: var(--fg); border: 1px solid var(--border-strong); }
     .btn-outline:hover { background: #f8f9fa; }
+    .code-stats { width: 100%; padding: 12px 14px; border-radius: 12px; background: #f8f9fa; font-size: 0.875rem; color: var(--fg-soft); text-align: center; }
+    .code-stats strong { color: var(--fg); font-variant-numeric: tabular-nums; }
     .tip { margin-top: 20px; font-size: 0.875rem; color: var(--fg-muted); }
     @media (min-width: 760px) { .qr-grid { grid-template-columns: 1fr 280px; align-items: start; } .qr-form { display: grid; gap: 20px; } }
     @media (max-width: 759px) { .qr-form { display: grid; gap: 20px; } }
   </style>
 </head>
 <body>
-  <header class="top">
+  <header class="top admin-top">
     <a class="brand" href="./">
       <svg class="brand-mark" viewBox="0 0 64 40" aria-hidden="true">
         <path d="M22 6 6 20" stroke="#EA4335"/><path d="m6 20 16 14" stroke="#4285F4"/>
@@ -40,6 +43,11 @@
       </svg>
       <span><strong>GDG on Campus</strong><span>QR-Codes für Plakate</span></span>
     </a>
+    <nav class="admin-nav" aria-label="Admin">
+      <a href="./">Landingpage</a>
+      <a href="qr.html" aria-current="page">QR-Codes</a>
+      <a href="dashboard.html">Statistiken</a>
+    </nav>
   </header>
 
   <main class="qr-wrap">
@@ -66,6 +74,7 @@
           <button class="btn btn-outline" id="dl-svg" type="button">SVG laden</button>
           <button class="btn btn-outline" id="copy" type="button">Link kopieren</button>
         </div>
+        <div class="code-stats" id="code-stats" aria-live="polite"></div>
       </div>
     </div>
     <p class="tip">Tipp: In Canva das SVG verwenden – es bleibt in jeder Größe scharf.</p>

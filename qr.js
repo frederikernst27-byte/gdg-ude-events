@@ -1,16 +1,19 @@
 import { loadAll } from "./lib/gdg.js";
 import { fmt } from "./lib/format.js";
 import { present, upcomingOf } from "./lib/select.js";
+import { CONFIG } from "./events.config.js";
 
 // Builds poster QR codes for the landing page. Uses `qrcode` from qrcode-generator (global).
 
 const $ = (sel) => document.querySelector(sel);
 const base = new URL("./", location.href);
 
+const cleanSrc = () => $("#src").value.trim().toLowerCase().replace(/[^a-z0-9-_]+/g, "-").replace(/^-|-$/g, "");
+
 function landingUrl() {
   const url = new URL(base);
   const target = $("#target").value;
-  const src = $("#src").value.trim().toLowerCase().replace(/[^a-z0-9-_]+/g, "-").replace(/^-|-$/g, "");
+  const src = cleanSrc();
   if (target) url.searchParams.set("e", target);
   if (src) url.searchParams.set("src", src);
   return url.toString();
@@ -28,7 +31,43 @@ function draw() {
   const qr = makeQr(url);
   $("#qr").innerHTML = qr.createSvgTag({ cellSize: 8, margin: 0, scalable: true });
   $("#qr-url").textContent = url;
+  showCodeStats();
 }
+
+// Numbers for this code's source, from the same endpoint the dashboard uses.
+let bySource = null;
+function showCodeStats() {
+  const box = $("#code-stats");
+  const src = cleanSrc();
+  if (!src) {
+    box.textContent = "Ohne Quelle zählt dieser Code als „direct“. Gib eine Quelle an, um ihn einzeln auszuwerten.";
+    return;
+  }
+  if (!bySource) {
+    box.textContent = "Statistik lädt …";
+    return;
+  }
+  const row = bySource.find((r) => r.src === src);
+  box.replaceChildren(
+    "Letzte 30 Tage: ",
+    Object.assign(document.createElement("strong"), { textContent: row ? row.views : 0 }),
+    " Aufrufe · ",
+    Object.assign(document.createElement("strong"), { textContent: row ? row.register : 0 }),
+    " Anmelde-Klicks · ",
+    Object.assign(document.createElement("a"), { href: "dashboard.html", textContent: "Alle Statistiken" })
+  );
+}
+
+fetch(`${CONFIG.statsEndpoint}?days=30`)
+  .then((r) => r.json())
+  .then((s) => {
+    bySource = s.by_source || [];
+    showCodeStats();
+  })
+  .catch(() => ($("#code-stats").textContent = "Statistik gerade nicht erreichbar."));
+
+const preset = new URLSearchParams(location.search).get("src");
+if (preset) $("#src").value = preset;
 
 function download(name, blob) {
   const a = Object.assign(document.createElement("a"), { href: URL.createObjectURL(blob), download: name });

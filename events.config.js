@@ -5,9 +5,12 @@
 // per event and an optional short slug for event-specific QR codes.
 
 export const CONFIG = {
-  // Robin's workflow app / dashboard. Every page view and click is POSTed here
-  // as JSON (see README → Tracking). Leave empty to send nothing.
-  trackingEndpoint: "",
+  // Every page view and click is POSTed here as JSON (see README → Tracking).
+  // Leave empty to send nothing. Backend: supabase/functions/gdg-track.
+  trackingEndpoint: "https://hhkddsjttsxbqqsfmcci.supabase.co/functions/v1/gdg-track",
+
+  // Aggregated numbers for dashboard.html and the QR tool (supabase/functions/gdg-stats).
+  statsEndpoint: "https://hhkddsjttsxbqqsfmcci.supabase.co/functions/v1/gdg-stats",
 
   links: {
     linktree: "https://tinyurl.com/gdg-link-stack",

@@ -46,7 +46,7 @@ jobs:
       - name: Collect site files
         run: |
           mkdir _site
-          cp -r index.html qr.html styles.css app.js qr.js events.config.js lib data _site/
+          cp -r index.html qr.html dashboard.html styles.css admin.css app.js qr.js dashboard.js events.config.js lib data _site/
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
