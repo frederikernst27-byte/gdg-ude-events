@@ -1,0 +1,12 @@
+{
+  "name": "gdg-ude-events",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Event landing page for GDG on Campus University of Duisburg-Essen",
+  "scripts": {
+    "update": "node scripts/update-events.mjs",
+    "dev": "npx --yes serve -l 5180 ."
+  },
+  "engines": { "node": ">=20" }
+}

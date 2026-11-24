@@ -1,0 +1,56 @@
+name: Update events & deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "0 */6 * * *" # every 6 hours
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Pull latest events from gdg.community.dev
+        run: node scripts/update-events.mjs
+
+      - name: Commit snapshot if events changed
+        run: |
+          # updated_at changes on every run, so ignore it when comparing
+          if git diff --quiet -I '"updated_at"' -- data/gdg.json; then
+            echo "No event changes"; exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/gdg.json
+          git commit -m "chore: update GDG events snapshot"
+          git push
+
+      - name: Collect site files
+        run: |
+          mkdir _site
+          cp -r index.html qr.html styles.css app.js qr.js events.config.js lib data _site/
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4

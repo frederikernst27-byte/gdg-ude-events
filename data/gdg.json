@@ -1,0 +1,244 @@
+{
+  "updated_at": "2026-11-24T13:46:14.848Z",
+  "chapter": {
+    "id": 3426,
+    "title": "GDG on Campus University of Duisburg-Essen - Essen, Germany",
+    "url": "https://gdg.community.dev/gdg-on-campus-university-of-duisburg-essen-essen-germany/",
+    "members_count": 179,
+    "instagram_handle": "gdg_ude",
+    "website": "https://tinyurl.com/gdg-link-stack"
+  },
+  "team": [
+    {
+      "name": "Lennart Kosova",
+      "role": "GDGoC Organizer",
+      "avatar": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_250,h_250,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/avatars/lennart_kosova_fgdWJr4.jpg",
+      "profile_url": "https://gdg.community.dev/u/mbwydz/"
+    },
+    {
+      "name": "David Munstein",
+      "role": "Dev & Organization",
+      "avatar": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_250,h_250,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/avatars/david_munstein_91c53636.png",
+      "profile_url": "https://gdg.community.dev/u/mcvgqv/"
+    },
+    {
+      "name": "Allan Burfeind Bimete",
+      "role": "Dev and Organization",
+      "avatar": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_250,h_250,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/avatars/allan_bimete_b4bf6910.jpeg",
+      "profile_url": "https://gdg.community.dev/u/m6r5j2/"
+    },
+    {
+      "name": "Frederik Ernst",
+      "role": "Dev and Organization",
+      "avatar": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_250,h_250,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/avatars/frederik_ernst_499d164f.jpeg",
+      "profile_url": "https://gdg.community.dev/u/mpjhbk/"
+    }
+  ],
+  "events": [
+    {
+      "id": 128815,
+      "title": "Positionstechnologie im Fahrzeug",
+      "description_short": "Vom Satellitensignal zur präzisen Fahrzeugposition - Stefan Döring, Software Teamleiter bei Volkswagen, gibt einen exklu...",
+      "start_date": "2026-03-11T18:00:23Z",
+      "end_date": "2026-03-11T20:00:23Z",
+      "timezone": "Europe/Berlin",
+      "audience_type": "IN_PERSON",
+      "is_virtual": false,
+      "picture": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_rS9dHSH",
+      "url": "https://gdg.community.dev/events/details/google-gdg-on-campus-university-of-duisburg-essen-essen-germany-presents-positionstechnologie-im-fahrzeug/",
+      "venue_name": "Room SH-403",
+      "venue_address": "SSchützenbahn 70",
+      "venue_city": "Essen",
+      "tags": [
+        "Tech Talk / Meetup"
+      ]
+    },
+    {
+      "id": 121285,
+      "title": "Kick-off",
+      "description_short": "Join us for our Kick-off Meeting where we align our vision and strategies for the year! If you're passionate about shapi...",
+      "start_date": "2026-04-14T12:00:00Z",
+      "end_date": "2026-04-14T14:00:00Z",
+      "timezone": "Europe/Berlin",
+      "audience_type": "IN_PERSON",
+      "is_virtual": false,
+      "picture": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_afZFKEt",
+      "url": "https://gdg.community.dev/events/details/google-gdg-on-campus-university-of-duisburg-essen-essen-germany-presents-kick-off/",
+      "venue_name": "Room SH-406 at University of Duisburg-Essen",
+      "venue_address": "70 Schützenbahn",
+      "venue_city": "Essen",
+      "tags": [
+        "Community Building",
+        "Tech Talk / Meetup"
+      ]
+    },
+    {
+      "id": 124520,
+      "title": "Cohesive AI Avatars with go AVA",
+      "description_short": "The CEO of go AVA will discuss how the company successfully trains and deploys cohesive AI avatars. ",
+      "start_date": "2026-06-10T17:00:00Z",
+      "end_date": "2026-06-10T19:00:00Z",
+      "timezone": "Europe/Berlin",
+      "audience_type": "IN_PERSON",
+      "is_virtual": false,
+      "picture": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/Jan%20Schellenberger%20%281%29_L5TWhaC.jpeg",
+      "url": "https://gdg.community.dev/events/details/google-gdg-on-campus-university-of-duisburg-essen-essen-germany-presents-cohesive-ai-avatars-with-go-ava/",
+      "venue_name": "Room SH-403 at University of Duisburg-Essen",
+      "venue_address": "70 Schützenbahn",
+      "venue_city": "Essen",
+      "tags": [
+        "AI"
+      ]
+    },
+    {
+      "id": 125097,
+      "title": "How Embeddings Make Search Actually Understand You",
+      "description_short": "You've probably heard \"embeddings\" thrown around in every AI talk. But what are they really? ",
+      "start_date": "2026-07-15T17:00:00Z",
+      "end_date": "2026-07-15T19:00:00Z",
+      "timezone": "Europe/Berlin",
+      "audience_type": "IN_PERSON",
+      "is_virtual": false,
+      "picture": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_IpOuERM",
+      "url": "https://gdg.community.dev/events/details/google-gdg-on-campus-university-of-duisburg-essen-essen-germany-presents-how-embeddings-make-search-actually-understand-you/",
+      "venue_name": "Room SH-403 at University of Duisburg-Essen",
+      "venue_address": "70 Schützenbahn",
+      "venue_city": "Essen",
+      "tags": [
+        "AI",
+        "Google Cloud",
+        "Networking",
+        "Workshop / hands-on session"
+      ]
+    },
+    {
+      "id": 127655,
+      "title": "Demystifying Large Language Models: How Transformers Actually Work",
+      "description_short": "Discover how Large Language Models work by building them step by step. ",
+      "start_date": "2026-08-18T15:00:00Z",
+      "end_date": "2026-08-18T17:00:00Z",
+      "timezone": "Europe/Berlin",
+      "audience_type": "IN_PERSON",
+      "is_virtual": false,
+      "picture": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_dRlliKK",
+      "url": "https://gdg.community.dev/events/details/google-gdg-on-campus-university-of-duisburg-essen-essen-germany-presents-demystifying-large-language-models-how-transformers-actually-work/",
+      "venue_name": "Room SH-403 at University of Duisburg-Essen",
+      "venue_address": "70 Schützenbahn",
+      "venue_city": "Essen",
+      "tags": [
+        "AI",
+        "Build with AI",
+        "Workshop / hands-on session"
+      ]
+    },
+    {
+      "id": 127968,
+      "title": "Visiting the go AVA Office",
+      "description_short": "Join us for an exclusive visit to the go AVA office, where we'll get a behind-the-scenes look at how AI avatars are crea...",
+      "start_date": "2026-08-20T12:00:10Z",
+      "end_date": "2026-08-20T16:00:10Z",
+      "timezone": "Europe/Berlin",
+      "audience_type": "IN_PERSON",
+      "is_virtual": false,
+      "picture": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_bY64Jf4",
+      "url": "https://gdg.community.dev/events/details/google-gdg-on-campus-university-of-duisburg-essen-essen-germany-presents-visiting-the-go-ava-office/",
+      "venue_name": "Blumenkamp 2",
+      "venue_address": "2 Blumenkamp",
+      "venue_city": "Essen",
+      "tags": [
+        "AI",
+        "Networking"
+      ]
+    },
+    {
+      "id": 129230,
+      "title": "How to Get an Internship in Big Tech",
+      "description_short": "You’ll learn how to approach technical interviews, prepare effectively, and use practical strategies that work not only at Google and other big tech companies, but also at smaller companies and startups.",
+      "start_date": "2026-09-28T17:00:00Z",
+      "end_date": "2026-09-28T19:00:00Z",
+      "timezone": "Europe/Berlin",
+      "audience_type": "IN_PERSON",
+      "is_virtual": false,
+      "picture": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_H4Y3nUm",
+      "url": "https://gdg.community.dev/events/details/google-gdg-on-campus-university-of-duisburg-essen-essen-germany-presents-how-to-get-an-internship-in-big-tech/",
+      "venue_name": "Room SH-403 at University of Duisburg-Essen",
+      "venue_address": "Schützenbahn 70",
+      "venue_city": "Essen",
+      "tags": [
+        "Tech Talk / Meetup"
+      ]
+    },
+    {
+      "id": 130633,
+      "title": "Linux-Install-Party feat. Fachschaft Informatik Essen",
+      "description_short": "Join the Linux Install Party by Google Developer Group to explore Linux's benefits as a free, ad-free, and privacy-friendly OS. Ideal for computer science students, learn basics and install Linux on your laptop with guidance from experienced peers. Enjoy free snacks, drinks, and networking. Bring your Intel/AMD laptop for installation. Registration is required for planning purposes.",
+      "start_date": "2026-10-14T12:00:41Z",
+      "end_date": "2026-10-14T16:00:41Z",
+      "timezone": "Europe/Berlin",
+      "audience_type": "IN_PERSON",
+      "is_virtual": false,
+      "picture": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_qnz4D9i",
+      "url": "https://gdg.community.dev/events/details/google-gdg-on-campus-university-of-duisburg-essen-essen-germany-presents-linux-install-party-feat-fachschaft-informatik-essen/",
+      "venue_name": "SH-403",
+      "venue_address": "Schützenbahn 70",
+      "venue_city": "Essen",
+      "tags": [
+        "Workshop / hands-on session"
+      ]
+    },
+    {
+      "id": 128863,
+      "title": "Transforming Water Resource Management through Flood Forecasting",
+      "description_short": "Discover how AI is used for flood forecasting and learn about the projects PROWAVE and Google Flood Hub. In this talk, Gregor Johnen from the Institute of Hydraulic Engineering and Water Resources Management at the University of Duisburg-Essen and FloodWaive Predictive Intelligence GmbH, explains how he uses artificial intelligence in his doctoral dissertation to forecast floods.",
+      "start_date": "2026-10-21T14:00:51Z",
+      "end_date": "2026-10-21T16:00:51Z",
+      "timezone": "Europe/Berlin",
+      "audience_type": "IN_PERSON",
+      "is_virtual": false,
+      "picture": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_DA8kosc",
+      "url": "https://gdg.community.dev/events/details/google-gdg-on-campus-university-of-duisburg-essen-essen-germany-presents-transforming-water-resource-management-through-flood-forecasting/",
+      "venue_name": "SH-403",
+      "venue_address": "Schützenbahn 70",
+      "venue_city": "Essen",
+      "tags": [
+        "Tech Talk / Meetup"
+      ]
+    },
+    {
+      "id": 134899,
+      "title": "Digital Twins in Smart Factories: Concepts for efficient and flexible energy management",
+      "description_short": "Join Gerrit Rolofs from TE Connectivity as he explores how Digital Twins and CPPS can enhance energy efficiency in smart factories. Learn about real-time data, simulation, and intelligent optimization for integrating renewable energy into production. This insightful talk in German highlights demand-side flexibility and load shifting for more sustainable industrial practices.",
+      "start_date": "2026-11-30T17:00:55Z",
+      "end_date": "2026-11-30T19:00:55Z",
+      "timezone": "Europe/Berlin",
+      "audience_type": "IN_PERSON",
+      "is_virtual": false,
+      "picture": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_XouGtvS",
+      "url": "https://gdg.community.dev/events/details/google-gdg-on-campus-university-of-duisburg-essen-essen-germany-presents-digital-twins-in-smart-factories-concepts-for-efficient-and-flexible-energy-management/",
+      "venue_name": "SH-403",
+      "venue_address": "Schützenbahn 70",
+      "venue_city": "Essen",
+      "tags": []
+    },
+    {
+      "id": 135836,
+      "title": "Dev Fest",
+      "description_short": "Details will be published soon. Stay tuned!",
+      "start_date": "2026-12-17T13:00:42Z",
+      "end_date": "2026-12-17T17:00:42Z",
+      "timezone": "Europe/Berlin",
+      "audience_type": "IN_PERSON",
+      "is_virtual": false,
+      "picture": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/contentbuilder/GDG_Bevy_DefaultEventThumbnail_2_va1kAS9.png",
+      "url": "https://gdg.community.dev/events/details/google-gdg-on-campus-university-of-duisburg-essen-essen-germany-presents-dev-fest/",
+      "venue_name": "ZIM",
+      "venue_address": "70 Schützenbahn",
+      "venue_city": "Essen",
+      "tags": [
+        "Conference",
+        "DevFest",
+        "Tech Talk / Meetup"
+      ]
+    }
+  ]
+}
